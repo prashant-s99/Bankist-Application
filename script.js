@@ -120,7 +120,7 @@ btnLogin.addEventListener('click', function(event){
   if(currentAccount?.pin === +(inputLoginPin.value)){
     if(timer) clearInterval(timer)
     timer = startLogoutTimer(); //Auto Logout function.
-    labelWelcome.textContent = Welcome back ${currentAccount.owner.split(" ")[0]}!;
+    labelWelcome.textContent = `Welcome back ${currentAccount.owner.split(" ")[0]}!`;
     labelDate.textContent= displayDateTime(new Date(), currentAccount.locale);
     containerApp.style.opacity = 100;
 
@@ -171,7 +171,7 @@ const displayMovements = function(acc, sort=false){
     const transferType = mov > 0 ? 'deposit' : 'withdrawal'
     const insertMovementHTML = `
           <div class="movements__row">
-            <div class="movements_type movements_type--${transferType}">${i+1}  ${transferType}</div>
+            <div class="movements__type movements__type--${transferType}">${i+1}  ${transferType}</div>
             <div class="movements__date">${displayDateTime(new Date(acc.movementsDates[i]), acc.locale) || new Date()}</div>
             <div class="movements__value">${formattedAmount(mov)}</div>
           </div>`;
@@ -187,14 +187,14 @@ const calcDisplaySummary = function(acc){
   {
   return (accu+movement);
   },0)
-  labelSumIn.textContent = ${formattedAmount(totalIn.toFixed(2))};
+  labelSumIn.textContent = `${formattedAmount(totalIn.toFixed(2))}`;
   
   const totalOut =withdrawals.reduce((accu, movement)=> {
     return (accu+movement);
   },0)
-  labelSumOut.textContent = ${formattedAmount(Math.abs(totalOut).toFixed(2))};
+  labelSumOut.textContent = `${formattedAmount(Math.abs(totalOut).toFixed(2))}`;
   const totalInterest = (totalIn * acc.interestRate)/100;
-  labelSumInterest.textContent= ${formattedAmount(totalInterest.toFixed(2))}
+  labelSumInterest.textContent= `${formattedAmount(totalInterest.toFixed(2))}`
 };
 
 
@@ -205,7 +205,7 @@ const calcDisplayBalance= function(acc){
     }
   ,0);
 
-  labelBalance.textContent = ${formattedAmount(acc.balance.toFixed(2))}
+  labelBalance.textContent = `${formattedAmount(acc.balance.toFixed(2))}`
 };
 
 
@@ -261,14 +261,14 @@ btnLoan.addEventListener('click',function(e){
   const amount= Math.floor(inputLoanAmount.value);
   if(amount>0 && deposits.some( dep => dep >= 0.1*amount))
   {
-    labelLoanAmountError.textContent = Amount has been added.;
+    labelLoanAmountError.textContent = `Amount has been added.`;
     labelLoanAmountError.style.color = 'black';
     labelLoanAmountError.style.opacity = 100;
     currentAccount.movements.push(amount); //Add movement
     currentAccount.movementsDates.push(new Date().toISOString()); //Adding movement date
   }
   else{
-  labelLoanAmountError.textContent = Invalid Amount Requested;
+  labelLoanAmountError.textContent = `Invalid Amount Requested`;
   labelLoanAmountError.style.opacity = 100;
   }
   
@@ -306,11 +306,11 @@ const startLogoutTimer = ()=>{
   const tick = function (){
     const min= String(Math.trunc(time/60)).padStart(2, 0);
     const sec = String(time%60).padStart(2,0);
-    labelTimer.textContent= ${min}:${sec};
+    labelTimer.textContent= `${min}:${sec}`;
 
     if(time===0){
       clearInterval(timer);
-      labelBalance.textContent = Log in to get started;
+      labelBalance.textContent = `Log in to get started`;
       containerApp.style.opacity = 0;
     }
 
@@ -333,3 +333,5 @@ const startLogoutTimer = ()=>{
 
 
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+

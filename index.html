@@ -22,14 +22,14 @@
         <input
           type="text"
           placeholder="User"
-          class="login_input login_input--user"
+          class="login__input login__input--user"
         />
         <!-- In practice, use type="password" -->
         <input
           type="text"
           placeholder="PIN"
           maxlength="4"
-          class="login_input login_input--pin"
+          class="login__input login__input--pin"
         />
         <button class="login__btn">&rarr;</button>
       </form>
@@ -54,12 +54,12 @@
       <!-- MOVEMENTS -->
       <div class="movements">
         <div class="movements__row">
-          <div class="movements_type movements_type--deposit">2 deposit</div>
+          <div class="movements__type movements__type--deposit">2 deposit</div>
           <div class="movements__date">3 days ago</div>
           <div class="movements__value">4 000€</div>
         </div>
         <div class="movements__row">
-          <div class="movements_type movements_type--withdrawal">
+          <div class="movements__type movements__type--withdrawal">
             1 withdrawal
           </div>
           <div class="movements__date">24/01/2037</div>
@@ -70,11 +70,11 @@
       <!-- SUMMARY -->
       <div class="summary">
         <p class="summary__label">In</p>
-        <p class="summary_value summary_value--in">0000€</p>
+        <p class="summary__value summary__value--in">0000€</p>
         <p class="summary__label">Out</p>
-        <p class="summary_value summary_value--out">0000€</p>
+        <p class="summary__value summary__value--out">0000€</p>
         <p class="summary__label">Interest</p>
-        <p class="summary_value summary_value--interest">0000€</p>
+        <p class="summary__value summary__value--interest">0000€</p>
         <button class="btn--sort">&downarrow; SORT</button>
       </div>
 
@@ -82,9 +82,9 @@
       <div class="operation operation--transfer">
         <h2>Transfer money</h2>
         <form class="form form--transfer">
-          <input type="text" class="form_input form_input--to" />
-          <input type="number" class="form_input form_input--amount" />
-          <button class="form_btn form_btn--transfer">&rarr;</button>
+          <input type="text" class="form__input form__input--to" />
+          <input type="number" class="form__input form__input--amount" />
+          <button class="form__btn form__btn--transfer">&rarr;</button>
           <label class="form__label">Transfer to</label>
           <label class="form__label">Amount</label>
         </form>
@@ -94,10 +94,10 @@
       <div class="operation operation--loan">
         <h2>Request loan</h2>
         <form class="form form--loan">
-          <input type="number" class="form_input form_input--loan-amount" />
-          <button class="form_btn form_btn--loan">&rarr;</button>
-          <label class="form_label form_label--loan">Amount</label>
-          <label class="form_label form_label--loan--error">Invalid Amount Requested</label>
+          <input type="number" class="form__input form__input--loan-amount" />
+          <button class="form__btn form__btn--loan">&rarr;</button>
+          <label class="form__label form__label--loan">Amount</label>
+          <label class="form__label form__label--loan--error">Invalid Amount Requested</label>
         </form>
       </div>
 
@@ -105,13 +105,13 @@
       <div class="operation operation--close">
         <h2>Close account</h2>
         <form class="form form--close">
-          <input type="text" class="form_input form_input--user" />
+          <input type="text" class="form__input form__input--user" />
           <input
             type="password"
             maxlength="6"
-            class="form_input form_input--pin"
+            class="form__input form__input--pin"
           />
-          <button class="form_btn form_btn--close">&rarr;</button>
+          <button class="form__btn form__btn--close">&rarr;</button>
           <label class="form__label">Confirm user</label>
           <label class="form__label">Confirm PIN</label>
         </form>
